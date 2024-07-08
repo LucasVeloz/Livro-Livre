@@ -16,8 +16,6 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
@@ -36,14 +34,12 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 
-
 ## Developing
 
 Module architecture is based on the [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) methodology.
 
 
-https://refactoring.guru/design-patterns
-Design patterns:
+### [Design patterns:](https://refactoring.guru/design-patterns)
 - Facade
 - Factory
 - Adapter
@@ -56,8 +52,7 @@ Design patterns:
 Every Folder have to have an `index.tsx` file that exports the main file. Index does not have to have any logic, just import and export the main file.
 
 
-### Use Conventional Commits
-https://www.conventionalcommits.org/en/v1.0.0/
+### [Use Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 - `feat`: A new feature
 - `fix`: A bug fix
 - `docs`: Documentation only changes
