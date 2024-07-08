@@ -34,3 +34,23 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+## Developing
+
+Module architecture is based on the [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) methodology.
+
+
+https://refactoring.guru/design-patterns
+Design patterns:
+- Facade
+- Factory
+- Adapter
+- Composite
+- SOLID
+- Index Pattern
+
+
+### Folder
+Every Folder have to have an `index.tsx` file that exports the main file. Index does not have to have any logic, just import and export the main file.
