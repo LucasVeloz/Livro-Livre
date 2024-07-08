@@ -54,3 +54,17 @@ Design patterns:
 
 ### Folder
 Every Folder have to have an `index.tsx` file that exports the main file. Index does not have to have any logic, just import and export the main file.
+
+
+### Use Conventional Commits
+https://www.conventionalcommits.org/en/v1.0.0/
+- `feat`: A new feature
+- `fix`: A bug fix
+- `docs`: Documentation only changes
+
+### Use Git Trunk Based Development
+- Main branch is `main`
+- Feature branches are `feat/feature-name`
+- Hotfix branches are `hotfix/hotfix-name`
+- Release branches are `release/release-name`
+- Bugfix branches are `fix/bugfix-name`
