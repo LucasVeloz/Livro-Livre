@@ -1,9 +1,7 @@
 "use client"
 import { IDetectedBarcode, Scanner } from "@yudiel/react-qr-scanner";
-import Image from "next/image";
-import { useEffect } from "react";
 
-export default function Home() {
+export default function QRCode() {
   function onScan(data: IDetectedBarcode[]) {
     data.forEach(item => {
       console.log(item.rawValue)
@@ -13,10 +11,19 @@ export default function Home() {
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="overflow-hidden">
       <Scanner
         onScan={onScan}
-
+        styles={{
+          video: {
+            accentColor: "#003ds",
+          },
+          // container: {
+          //   color: "blue",
+          //   background: "blue"
+          // },
+          finderBorder: 10
+        }}
       />
     </main>
   );
