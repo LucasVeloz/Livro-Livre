@@ -10,11 +10,8 @@
   },
   "dependencies": {
     "@yudiel/react-qr-scanner": "^2.0.4",
-<<<<<<< HEAD
     "lucide-react": "^0.429.0",
-=======
     "axios": "^1.7.4",
->>>>>>> main
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18"
