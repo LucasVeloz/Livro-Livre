@@ -1,5 +1,6 @@
 "use client";
 
+import { Menu } from "@/components/menu";
 import { Search } from "@/components/search";
 import { BookCopyIcon, FolderInputIcon, User2Icon, UserPlus2Icon } from "lucide-react";
 import Link from "next/link";
@@ -26,6 +27,7 @@ export default function Page() {
           Consulta
         </Link>
       </div>
+      <Menu />
     </main>
   )
 }

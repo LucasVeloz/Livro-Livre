@@ -1,3 +1,4 @@
+import { Menu } from "@/components/menu";
 import { Search } from "@/components/search";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,6 +6,7 @@ import Link from "next/link";
 export default function Lookup() {
   return (
     <main className="flex flex-col w-full min-h-screen">
+      <Search />
       <div className="grid grid-cols-2 gap-5 pt-6 px-6 mt-[5.25rem] pb-[7rem] w-full">
         {Array(8).fill(1).map((_, i) =>
           <div
@@ -31,6 +33,7 @@ export default function Lookup() {
           </div>
         )}
       </div>
+      <Menu />
     </main>
   )
 }
