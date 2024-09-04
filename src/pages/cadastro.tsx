@@ -2,9 +2,14 @@
 
 import { FormEvent, useState } from "react";
 import Image from "next/image";
-import logo from '@/assets/images/logo.png';
+import logo from '@/public/assets/images/logo.png';
+import { KohaApi } from "@/services";
+import { AxiosError } from "axios";
+import { useRouter } from "next/router";
 
 export default function SignUp() {
+  const router = useRouter();
+
   const [cpf, setCpf] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
 
@@ -26,18 +31,30 @@ export default function SignUp() {
   }
 
 
-  function onSubmit(event: FormEvent<HTMLFormElement>) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const name = (form.elements.namedItem('name') as HTMLInputElement).value;
     const email = (form.elements.namedItem('email') as HTMLInputElement).value;
     const tel = (form.elements.namedItem('tel') as HTMLInputElement).value;
     const cpf = (form.elements.namedItem('cpf') as HTMLInputElement).value;
+    try {
 
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Tel:', tel);
-    console.log('CPF:', cpf);
+      const response = await KohaApi.user.signUp({
+        surname: name,
+        email,
+        phone: tel,
+        category_id: 'Staff',
+        library_id: 'Unb',
+      })
+
+      console.log('----->', response)
+    } catch (e) {
+      console.error(e);
+      if (e instanceof AxiosError) {
+        console.log(e.code, e.response)
+      }
+    }
   }
 
   return (
@@ -53,7 +70,13 @@ export default function SignUp() {
           <label>CPF</label>
           <input id="cpf" type="text" className="text-black px-2 py-1 rounded-md" onChange={e => setCpf(cpfMask(e.target.value))} value={cpf} />
           <div className="w-full flex gap-2">
-            <button type="button" className="w-full p-2 bg-white text-black rounded-lg mt-4">Voltar</button>
+            <button
+              type="button"
+              onClick={router.back}
+              className="w-full p-2 bg-white text-black rounded-lg mt-4"
+            >
+              Voltar
+            </button>
             <button type="submit" className="w-full p-2 bg-primary text-background rounded-lg mt-4">Cadastrar</button>
           </div>
       </form>

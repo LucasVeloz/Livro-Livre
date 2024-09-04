@@ -6,6 +6,7 @@ export const Wrapper = ({ children }: { children: ReactNode }) => {
     <>
     <Head>
       <title>Livro Livre</title>
+      <link rel="icon" href="/assets/favicon.ico" />
     </Head>
     {children}
     </>
