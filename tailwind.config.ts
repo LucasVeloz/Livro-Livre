@@ -13,11 +13,20 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      boxShadow: {
+        "base": "0px 2px 10px 0px rgba(0,0,0,0.10)"
+      },
       colors: {
         primary: "#037030",
         secondary: "#0A3063",
         tertiary: "#8EA2A2",
         background: "white",
+        custom: {
+          black: "#1d1e1f",
+          white: "#FBFDFD",
+          darkGray: "#717171",
+          lightGray: "#E4E4E7",
+        }
       },
     },
   },
