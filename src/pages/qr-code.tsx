@@ -1,4 +1,5 @@
 "use client"
+import { Menu } from "@/components/menu";
 import { IDetectedBarcode, Scanner } from "@yudiel/react-qr-scanner";
 
 export default function QRCode() {
@@ -11,20 +12,16 @@ export default function QRCode() {
 
 
   return (
-    <main className="overflow-hidden">
-      <Scanner
-        onScan={onScan}
-        styles={{
-          video: {
-            accentColor: "#003ds",
-          },
-          // container: {
-          //   color: "blue",
-          //   background: "blue"
-          // },
-          finderBorder: 10
-        }}
-      />
-    </main>
+    <div className="flex h-screen w-screen bg-black justify-center items-center">
+      <div>
+        <Scanner
+          onScan={onScan}
+          styles={{
+            finderBorder: 10
+          }}
+        />
+      </div>
+      <Menu />
+    </div>
   );
 }

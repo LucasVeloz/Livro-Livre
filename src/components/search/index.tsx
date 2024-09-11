@@ -1,7 +1,20 @@
+import { useBooks, useDebounce } from "@/hooks";
 import { ScanQrCodeIcon, SearchIcon } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export function Search() {
+  const [search, setSearch] = useState("");
+
+  const debouncedSearch = useDebounce(search);
+  const { mutateAsync } = useBooks();
+
+
+  useEffect(() => {
+    mutateAsync(debouncedSearch);
+  }, [debouncedSearch, mutateAsync])
+
+
   return (
     <div className="fixed top-0 left-0 w-full px-4 py-5 bg-custom-white rounded-b-lg flex items-center gap-3 border border-custom-lightGray shadow-base">
       <form
@@ -14,6 +27,8 @@ export function Search() {
           type="text"
           className="w-full bg-transparent text-sm placeholder:text-custom-darkGray"
           placeholder="Procure um livro pelo título ou autor"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
       </form>
       <Link

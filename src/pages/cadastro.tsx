@@ -48,7 +48,6 @@ export default function SignUp() {
         library_id: 'Unb',
       })
 
-      console.log('----->', response)
     } catch (e) {
       console.error(e);
       if (e instanceof AxiosError) {
