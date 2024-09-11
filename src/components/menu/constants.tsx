@@ -4,12 +4,12 @@ import { BookCopyIcon, LibraryBigIcon, TextSearchIcon, User2Icon } from "lucide-
 export const routes = [
   {
     name: "Consulta",
-    path: "/",
+    path: "/consulta",
     Icon: <LibraryBigIcon size={18} />,
   },
   {
-    name: "Busca",
-    path: "/busca",
+    name: "Home",
+    path: "/",
     Icon: <TextSearchIcon size={18} />
   },
   {
@@ -17,9 +17,9 @@ export const routes = [
     path: "/emprestimo",
     Icon: <BookCopyIcon size={18} />
   },
-  {
-    name: "Perfil",
-    path: "/perfil",
-    Icon: <User2Icon size={18} />
-  },
+  // {
+  //   name: "Perfil",
+  //   path: "/perfil",
+  //   Icon: <User2Icon size={18} />
+  // },
 ];
